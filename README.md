@@ -6,11 +6,11 @@ The **Library Management System** is a web-based platform designed to enhance bo
 Currently, **only the frontend is completed**, with the backend development in progress.  
 
 ## Features (Frontend)  
-✅ **Modern UI** – Responsive and intuitive design.  
-✅ **Book Browsing** – Search and filter books easily.  
-✅ **Book Details Page** – View book summaries, authors, and availability status.  
-✅ **User Authentication (UI only)** – Login and signup pages designed.  
-✅ **Borrow & Read UI** – Designed interfaces for borrowing and online reading.  
+**Modern UI** – Responsive and intuitive design.  
+**Book Browsing** – Search and filter books easily.  
+**Book Details Page** – View book summaries, authors, and availability status.  
+**User Authentication (UI only)** – Login and signup pages designed.  
+**Borrow & Read UI** – Designed interfaces for borrowing and online reading.  
 
 ## Tech Stack  
 - **Frontend**: HTML, CSS, JavaScript  
