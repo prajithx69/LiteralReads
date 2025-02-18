@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - LiteralReads</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">LiteralReads</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="membership.html">Get Membership</a></li>
+        <li><a href="rentbook.html">Rent a Book</a></li>
+        <li><a href="admin.html">Admin Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="dashboard">
+      <h1>Admin Dashboard</h1>
+
+      <div class="admin-section">
+        <h2>Members List</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+              <th>ID Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Example static data, this should be dynamically populated -->
+            <tr>
+              <td>John Doe</td>
+              <td>1234567890</td>
+              <td>johndoe@example.com</td>
+              <td>ABC123</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="admin-section">
+        <h2>Books in Stock</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>ISBN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Example static data, this should be dynamically populated -->
+            <tr>
+              <td>Engineering Physics</td>
+              <td>Author 1</td>
+              <td>ISBN123456</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="admin-section">
+        <h2>Add or Remove Books</h2>
+        <form id="addBookForm">
+          <label for="bookTitle">Book Title:</label>
+          <input type="text" id="bookTitle" name="bookTitle" required><br>
+          
+          <label for="bookAuthor">Author:</label>
+          <input type="text" id="bookAuthor" name="bookAuthor" required><br>
+          
+          <label for="bookISBN">ISBN:</label>
+          <input type="text" id="bookISBN" name="bookISBN" required><br>
+          
+          <button type="submit">Add Book</button>
+        </form>
+        
+        <form id="removeBookForm">
+          <label for="removeBookISBN">ISBN of Book to Remove:</label>
+          <input type="text" id="removeBookISBN" name="removeBookISBN" required><br>
+          
+          <button type="submit">Remove Book</button>
+        </form>
+      </div>
+
+      <div class="admin-section">
+        <h2>Members Accessed Books</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Book Title</th>
+              <th>Accessed By</th>
+              <th>Access Date</th>
+              <th>Return Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Example static data, this should be dynamically populated -->
+            <tr>
+              <td>Engineering Physics</td>
+              <td>Jane Doe</td>
+              <td>2023-06-01</td>
+              <td>2023-07-01</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 LiteralReads. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const addBookForm = document.getElementById('addBookForm');
+      const removeBookForm = document.getElementById('removeBookForm');
+
+      addBookForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const bookTitle = document.getElementById('bookTitle').value.trim();
+        const bookAuthor = document.getElementById('bookAuthor').value.trim();
+        const bookISBN = document.getElementById('bookISBN').value.trim();
+
+        if (bookTitle !== '' && bookAuthor !== '' && bookISBN !== '') {
+          alert('Book added successfully!');
+          addBookForm.reset();
+        } else {
+          alert('Please fill in all fields.');
+        }
+      });
+
+      removeBookForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const removeBookISBN = document.getElementById('removeBookISBN').value.trim();
+
+        if (removeBookISBN !== '') {
+          alert('Book removed successfully!');
+          removeBookForm.reset();
+        } else {
+          alert('Please fill in the ISBN of the book to remove.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

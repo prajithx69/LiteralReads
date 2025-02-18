@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Details - LiteralReads</title>
+  <link rel="stylesheet" href="css/book1.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">LiteralReads</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="membership.html">Get Membership</a></li>
+        <li><a href="rentbook.html">Rent a Book</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="sign up.html">Sign Up</a></li>
+        <li><a href="about_ushtml">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="book-details">
+    <div class="book-cover">
+      <img src="images/book-3.jpg" alt="Book 1">
+    </div>
+    <div class="book-info">
+      <h1>Book Title 1</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget justo nec odio scelerisque tincidunt ut id urna. Sed consequat erat sit amet metus posuere aliquam.</p>
+      <p><strong>Rent Price:</strong> $10</p>
+      <div class="button-group">
+        <button class="rent-button">Rent Now</button>
+        <button class="member-access-button">Member Access</button>
+      </div>
+      <div class="review-section">
+        <h2>Write a Review</h2>
+        <form class="review-form">
+          <textarea placeholder="Write your review here..." required></textarea>
+          <button type="submit" class="submit-review">Submit Review</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 LiteralReads. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const reviewForm = document.querySelector('.review-form');
+
+      reviewForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        alert('Thank you for your review!');
+        reviewForm.reset();
+      });
+    });
+  </script>
+</body>
+</html>

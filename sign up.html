@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LiteralReads - Sign Up</title>
+  <link rel="stylesheet" href="css/sign up.css">
+</head>
+<body>
+  <header>LiteralReads</header>
+  <main>
+    <div class="signup-box">
+      <div class="signup-section">
+        <h1>Sign Up</h1>
+        <form id="signupForm">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="role">Role:</label>
+            <select id="role" name="role" required>
+              <option value="">Select Role</option>
+              <option value="student">Student</option>
+              <option value="faculty">Faculty</option>
+            </select>
+          </div>
+          <div class="form-group" id="roleSpecificField" style="display: none;">
+            <label id="roleSpecificLabel"></label>
+            <input type="text" id="roleSpecificInput" name="roleSpecificInput">
+          </div>
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login</a></p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const signupForm = document.getElementById('signupForm');
+    const roleSelect = document.getElementById('role');
+    const roleSpecificField = document.getElementById('roleSpecificField');
+    const roleSpecificLabel = document.getElementById('roleSpecificLabel');
+    const roleSpecificInput = document.getElementById('roleSpecificInput');
+
+    roleSelect.addEventListener('change', function() {
+      const selectedRole = this.value;
+      if (selectedRole === 'student') {
+        roleSpecificField.style.display = 'block';
+        roleSpecificLabel.textContent = 'Roll No:';
+      } else if (selectedRole === 'faculty') {
+        roleSpecificField.style.display = 'block';
+        roleSpecificLabel.textContent = 'Faculty ID:';
+      } else {
+        roleSpecificField.style.display = 'none';
+      }
+    });
+
+    signupForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get form values
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const role = document.getElementById('role').value;
+      const roleSpecificValue = document.getElementById('roleSpecificInput').value.trim();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      // Perform sign-up validation or submit the form data to the server
+      // For this example, we'll just log the form data to the console
+      console.log('Name:', name);
+      console.log('Phone Number:', phone);
+      console.log('Email:', email);
+      console.log('Role:', role);
+      console.log('Role Specific Value:', roleSpecificValue);
+      console.log('Username:', username);
+      console.log('Password:', password);
+
+      // Reset the form after successful submission
+      signupForm.reset();
+    });
+  </script>
+</body>
+</html>

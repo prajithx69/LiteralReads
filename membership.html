@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Membership - LiteralReads</title>
+  <link rel="stylesheet" href="css/membership.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">LiteralReads</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="membership.html">Get Membership</a></li>
+        <li><a href="rentbook.html">Rent a Book</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="about_us.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="membership-form">
+    <h1>Get Membership</h1>
+    <form id="membershipForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br>
+
+      <label for="idNo">ID Number:</label>
+      <input type="text" id="idNo" name="idNo" required><br>
+
+      <label for="paymentRef">Payment Reference Number:</label>
+      <input type="text" id="paymentRef" name="paymentRef" required><br>
+
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 LiteralReads. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const membershipForm = document.getElementById('membershipForm');
+
+      membershipForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const idNo = document.getElementById('idNo').value.trim();
+        const paymentRef = document.getElementById('paymentRef').value.trim();
+
+        if (name !== '' && phone !== '' && email !== '' && idNo !== '' && paymentRef !== '') {
+          alert('Membership began successfully!');
+          membershipForm.reset();
+        } else {
+          alert('Please fill in all fields.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
