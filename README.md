@@ -1,4 +1,4 @@
-# Library Management System (Frontend)  
+# Library Management System 
 
 ## Project Overview  
 The **Library Management System** is a web-based platform designed to enhance book accessibility. Users can either **read books online** or **borrow physical copies** from the library. This system aims to simplify book management and improve user experience.  
